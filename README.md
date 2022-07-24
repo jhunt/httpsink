@@ -22,3 +22,24 @@ Here's an example:
            -u foo:bar -H 'X-Foo: Bar'
 
     $ docker logs httpsink
+
+Which shows up in the container log output as:
+
+```
+httpsink/1.0 listening on port 4500
+{
+  auth: 'foo:bar',
+  method: 'GET',
+  path: '/baz',
+  headers: {
+    host: '127.0.0.1:4500',
+    authorization: 'Basic Zm9vOmJhcg==',
+    'user-agent': 'curl/7.68.0',
+    accept: '*/*',
+    'x-foo': 'Bar'
+  },
+  body: ''
+}
+```
+
+Happy Hacking!
